@@ -4,9 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Alien//POJO
+public class Alien//POJO 
 {
-
+//ID to provide primary key
 	@Id
 	private int aid;
 	private String aname;
