@@ -19,7 +19,7 @@ public class App
         System.out.println( "Hello World!" );
         Alien mars=new Alien();
        
-        mars.setAid(18);
+        mars.setAid(181);
         mars.setAname("Rahul");
         mars.setColor("black");
         
