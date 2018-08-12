@@ -4,6 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
  * Hello world!
@@ -22,10 +24,18 @@ public class App
         mars.setAid(17);
         mars.setAname("NVN");
         mars.setColor("black");
+        mars.setAid(19);
+        mars.setAname("Dravid");
+        mars.setColor("black");
         
         
         Configuration con=new Configuration().configure().addAnnotatedClass(Alien.class);
-       SessionFactory sf=con.buildSessionFactory();
+        
+        //After 4.1 we have new interface(ServiceRegistry)/class from which  ServiceRegistryBuilder().
+        
+        ServiceRegistry reg=new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
+        		
+       SessionFactory sf=con.buildSessionFactory(reg);
      
         Session session=sf.openSession();//
         Transaction tx=session.beginTransaction();//Acid properties
