@@ -19,6 +19,9 @@ public class App
         mars.setAid(101);
         mars.setAname("Chitti");
         mars.setColor("White");
+        mars.setAid(17);
+        mars.setAname("NVN");
+        mars.setColor("black");
         
         
         Configuration con=new Configuration().configure().addAnnotatedClass(Alien.class);
