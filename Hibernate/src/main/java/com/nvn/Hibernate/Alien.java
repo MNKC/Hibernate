@@ -15,9 +15,6 @@ public class Alien//POJO
 //ID to provide primary key
 	@Id
 	private int aid;
-	//aname wont be stored in table  
-	@Transient
-	
 	private String aname;
 	@Column(name="alien_color")
 	private String color;
@@ -39,6 +36,10 @@ public class Alien//POJO
 	}
 	public void setColor(String color) {
 		this.color = color;
+	}
+		@Override
+	public String toString() {
+		return "Alien [aid=" + aid + ", aname=" + aname + ", color=" + color + "]";
 	}
 	
 	
