@@ -25,11 +25,13 @@ public class App
     	laptop.setLid(101);
     	laptop.setLname("Dell");
     	
+    	
     	Student s= new Student();
     	s.setName("Naveen");
     	s.setRollno(1);
     	s.setMarks(100);
-    	s.setLaptop(laptop);
+    	s.getLaptop().add(laptop);
+    	laptop.getStudent().add(s);
     	
     	Configuration con = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
     	

@@ -1,8 +1,14 @@
 package com.nvn.hibernateRelations;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+
 
 @Entity
 public class Student {
@@ -11,8 +17,9 @@ public class Student {
 	private int rollno;
 	private String name;
 	private int marks;
-	@OneToOne
-	private Laptop laptop;
+	//(mappedBy="student")
+	@ManyToMany(mappedBy="student")
+	private List<Laptop> laptop=new ArrayList<Laptop>();
 	
 	public int getRollno() {
 		return rollno;
@@ -32,10 +39,10 @@ public class Student {
 	public void setMarks(int marks) {
 		this.marks = marks;
 	}
-	public Laptop getLaptop() {
+	public List<Laptop> getLaptop() {
 		return laptop;
 	}
-	public void setLaptop(Laptop laptop) {
+	public void setLaptop(List<Laptop> laptop) {
 		this.laptop = laptop;
 	}
 	@Override
